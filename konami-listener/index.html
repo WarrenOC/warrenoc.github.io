@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Konami Listener</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: transparent;
+    }
+  </style>
+</head>
+<body>
+<script>
+  const konami = [38,38,40,40,37,39,37,39,66,65];
+  let buffer = [];
+
+  window.addEventListener("keydown", (e) => {
+    buffer.push(e.keyCode);
+    if (buffer.length > konami.length) buffer.shift();
+    if (buffer.join() === konami.join()) {
+      // Redirect entire page (not just iframe)
+      parent.location.href = "https://sites.google.com/view/legos-kb/vault";
+    }
+  });
+</script>
+</body>
+</html>
