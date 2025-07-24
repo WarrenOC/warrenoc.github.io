@@ -1,17 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Konami Code Listener</title>
+  <meta charset="UTF-8" />
+  <title>Konami Listener</title>
   <style>
     html, body {
       margin: 0;
       padding: 0;
-      width: 100%;
       height: 100%;
       background: transparent;
-      opacity: 0;
-      pointer-events: none;
     }
   </style>
 </head>
@@ -19,7 +16,6 @@
 <script>
   const konami = [38,38,40,40,37,39,37,39,66,65];
   let buffer = [];
-
   window.addEventListener("keydown", (e) => {
     buffer.push(e.keyCode);
     if (buffer.length > konami.length) buffer.shift();
